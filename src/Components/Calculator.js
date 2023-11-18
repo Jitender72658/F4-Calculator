@@ -61,13 +61,12 @@ const Calculator = () => {
             <button onClick={()=>performOperaton('*')}>*</button>
             <button onClick={()=>performOperaton('/')}>/</button>
         </div>
-        /// checking success
+        
          {success==true && <p className='successMessageContainer'>Success!</p>}
-         // checking error 
+       
          {success==false && success!=='' && <p className='errorMessageContainer'>Error!</p>}
-         // displaying error message
+        
          {errorMessage && <p >{errorMessage}</p>}
-         // displaying result
          {result!=='' && <p>Result= {result}</p>}
     </div>
   )
