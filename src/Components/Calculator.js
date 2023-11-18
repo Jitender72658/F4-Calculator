@@ -50,6 +50,9 @@ const Calculator = () => {
   return (
     <div className='calculatorContainer'>
         <div>
+            <h2>React Calculator</h2>
+        </div>
+        <div>
               <input placeholder="Num1" type='text' value={num1} onChange={(event)=>setNum1(event.target.value)}/>
         </div>
         <div>
