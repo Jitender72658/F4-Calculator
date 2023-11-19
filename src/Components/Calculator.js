@@ -10,14 +10,25 @@ const Calculator = () => {
     const validateInput = () => {
         // validating for the empty input
         if (num1.trim() === '' || num2.trim() === '') {
-            num1.trim() === ''?setErrorMessage("Num1 Cannot Be Empty"): setErrorMessage('Num2 Cannot Be Empty');
+            if(num1.trim() === '' && num2.trim() === ''){
+                  setErrorMessage("Num1 And Num2 Cannot Be Empty");
+            }
+            else{
+              num1.trim() === ''?setErrorMessage("Num1 Cannot Be Empty"): setErrorMessage('Num2 Cannot Be Empty');
+            }
+            
           setResult('');
           setSuccess(false);
           return false;
         }
         // validating for the input that is not number type 
-        if (isNaN(parseFloat(num1)) || isNaN(parseFloat(num2))) {
-          setErrorMessage('Please enter valid numbers.');
+        if (isNaN(Number(num1)) || isNaN(Number(num2))) {
+          if(isNaN(Number(num1)) && isNaN(Number(num2))){
+                 setErrorMessage("Num1 and Num2 are not numbers");
+          }
+          else{
+              isNaN(Number(num1))?setErrorMessage("Num1 is not a number"):setErrorMessage("Num2 is not a number");
+          }
           setSuccess(false);
           setResult('');
           return false;
